@@ -6497,10 +6497,9 @@ qboolean PM_SaberLocked( void )
 					anim = &level.knownAnimFileSets[gent->client->clientInfo.animFileIndex].animations[pm->ps->torsoAnim];
 #ifdef _DEBUG
 					qboolean ret =
-#endif // _DEBUG
-						gi.G2API_GetBoneAnimIndex( &gent->ghoul2[gent->playerModel], gent->lowerLumbarBone, (cg.time?cg.time:level.time), &currentFrame, &junk, &junk, &junk, &junk2, NULL );
-
 					assert(ret); // this would be pretty bad, the below code seems to assume the call succeeds. -gil
+#endif // _DEBUG
+					gi.G2API_GetBoneAnimIndex( &gent->ghoul2[gent->playerModel], gent->lowerLumbarBone, (cg.time?cg.time:level.time), &currentFrame, &junk, &junk, &junk, &junk2, NULL );
 
 					strength = G_SaberLockStrength( gent );
 					if ( pm->ps->torsoAnim == BOTH_CCWCIRCLELOCK ||
